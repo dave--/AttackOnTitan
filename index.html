@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		label {
+			display: inline-block;
+		}
+		img.tinyurl {
+			height: 1px;
+			width: 1px;
+			position: absolute;
+			z-index: -999;
+			opacity: 0;
+		}
+	</style>
+	<title></title>
+	<script src="seedrandom.min.js"></script>
+	<script src="Base64.js"></script>
+	<script src="LZString.js"></script>
+	<script src="main.js"></script>
+</head>
+<body>
+	<div class="set">
+		<label>Seed: <input type="text" name="seed"></label>
+	</div>
+	<div class="set">
+		<button name="generateLink">Generate Link</button><input type="text" readonly name="url"/>
+	</div>
+	<ol class="players">
+		<li class="player-1">
+			<input type="text" name="player-1-name"/>
+			<div class="controls">
+				<button name="draw" data-source=".player-1 .deck li" data-target=".player-1 .hand">Draw Random Card</button>
+			</div>
+			<ul class="deck">
+			</ul>
+
+			<div class="controls">
+				<button name="moveAll" data-source=".player-1 .hand li" data-target=".player-1 .discard">Discard All</button>
+			</div>
+			<ul class="hand">
+			</ul>
+
+			<div class="controls">
+				<button name="moveAll" data-source=".player-1 .discard li" data-target=".player-1 .deck">Shuffle back into Deck</button>
+			</div>
+			<ul class="discard">
+			</ul>
+		</li>
+		<li class="player-2">
+			<input type="text" name="player-2-name"/>
+			<div class="controls">
+				<button name="draw" data-source=".player-2 .deck li" data-target=".player-2 .hand">Draw Random Card</button>
+			</div>
+			<ul class="deck">
+			</ul>
+
+			<div class="controls">
+				<button name="moveAll" data-source=".player-2 .hand li" data-target=".player-2 .discard">Discard All</button>
+			</div>
+			<ul class="hand">
+			</ul>
+
+			<div class="controls">
+				<button name="moveAll" data-source=".player-2 .discard li" data-target=".player-2 .deck">Shuffle back into Deck</button>
+			</div>
+			<ul class="discard">
+			</ul>
+		</li>
+		<li class="player-3">
+			<input type="text" name="player-3-name"/>
+			<div class="controls">
+				<button name="draw" data-source=".player-3 .deck li" data-target=".player-3 .hand">Draw Random Card</button>
+			</div>
+			<ul class="deck">
+			</ul>
+
+			<div class="controls">
+				<button name="moveAll" data-source=".player-3 .hand li" data-target=".player-3 .discard">Discard All</button>
+			</div>
+			<ul class="hand">
+			</ul>
+
+			<div class="controls">
+				<button name="moveAll" data-source=".player-3 .discard li" data-target=".player-3 .deck">Shuffle back into Deck</button>
+			</div>
+			<ul class="discard">
+			</ul>
+		</li>
+	</ol>
+</body>
+</html>
