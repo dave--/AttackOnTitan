@@ -15,7 +15,7 @@ window.onload = function () {
 				addClass(e.target, 'clicked');
 			} else if (e.target.name === 'generateLink') {
 				var cfg = collectData();
-				var tinyurl = createTinyurl(location.href + '#' + Base64.urlSafeEncode(LZString.compress(JSON.stringify(cfg))));
+				var tinyurl = createTinyurl(location.protocol + '//' + location.host + location.pathname + '#' + Base64.urlSafeEncode(LZString.compress(JSON.stringify(cfg))));
 				$('[name="url"]')[0].value = tinyurl;
 			}
 		}
@@ -201,13 +201,13 @@ var createTinyurl = function (href) {
 		str += characters[Math.floor(Math.random() * characters.length)];
 	}
 
-	uri = 'http://tinyurl.com/create.php?source=indexpage&url=' + encodeURIComponent(href) + '&alias=AttackOnTitan-' + str;
+	uri = 'https://tinyurl.com/create.php?source=indexpage&url=' + encodeURIComponent(href) + '&alias=AttackOnTitan-' + str;
 	var img = document.createElement('img');
 	img.className = 'tinyurl';
 	img.src = uri;
 	document.body.appendChild(img);
 
-	return 'http://tinyurl.com/AttackOnTitan-' + str;
+	return 'https://tinyurl.com/AttackOnTitan-' + str;
 }
 // creates action box and shows it attached to passed element
 var actionBox = (function () {
