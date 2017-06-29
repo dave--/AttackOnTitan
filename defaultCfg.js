@@ -36,7 +36,7 @@ var defaultCfg = {
 		heroes: ["Armin", "Conny", "Eren", "Erwin", "Hange", "Levi", "Mikasa", "Sasha"]
 	},
 	districts: [{
-		name: "Wall Maria",
+		name: "Wall Maria - West",
 		hitpoints: 2,
 		locations: [],
 		outer: {
@@ -48,7 +48,7 @@ var defaultCfg = {
 			heroes: []
 		}
 	}, {
-		name: "Wall Maria",
+		name: "Wall Maria - East",
 		hitpoints: 2,
 		locations: [],
 		outer: {
@@ -60,7 +60,7 @@ var defaultCfg = {
 			heroes: []
 		}
 	}, {
-		name: "Wall Rose",
+		name: "Wall Rose - West",
 		hitpoints: 2,
 		locations: [],
 		outer: {
@@ -72,7 +72,7 @@ var defaultCfg = {
 			heroes: []
 		}
 	}, {
-		name: "Wall Rose",
+		name: "Wall Rose - East",
 		hitpoints: 2,
 		locations: [],
 		outer: {

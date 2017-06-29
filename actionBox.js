@@ -31,17 +31,20 @@ var actionBox = (function () {
 				case 'moveOne':
 					source.parentNode.removeChild(source);
 					target.appendChild(source);
+					sortList($('li', target));
 					break;
 				case 'moveAll':
 					source.forEach(function (el) {
 						el.parentNode.removeChild(el);
 						target.appendChild(el);
 					});
+					sortList($('li', target));
 					break;
 				case 'moveRandom':
 					source = source[Math.floor(RNG(collectData()) * source.length)];
 					source.parentNode.removeChild(source);
 					target.appendChild(source);
+					sortList($('li', target));
 					break;
 			}
 			actionBox.hide();
@@ -52,6 +55,28 @@ var actionBox = (function () {
 	});
 
 	var source;
+	var sortList = function (items) {
+		if (!items.length) {
+			return;
+		}
+		items = [].slice.call(items, 0);
+		var parentNode = items[0].parentNode;
+		for (var i = 0; i < items.length; i++) {
+			parentNode.removeChild(items[i]);
+		}
+		items = items.sort(function (a, b) {
+			if (a.innerText < b.innerText) {
+				return -1;
+			} else if (a.innerText > b.innerText) {
+				return 1;
+			} else {
+				return 0;
+			}
+		});
+		for (var i = 0; i < items.length; i++) {
+			parentNode.appendChild(items[i]);
+		}
+	}
 
 	return {
 		show: function (el) {
@@ -119,3 +144,4 @@ var actionBox = (function () {
 		}
 	};
 }())
+
