@@ -94,7 +94,7 @@ var cardData = [{
 	"subtype":"Move",
 	"cost":5,
 	"hitpoints":null,
-	"text":"Move 2+3 Power",
+	"text":"Move 2\n+3 Power",
 	"name":"Bertholdt Hoover"
 }, {
 	"type":"Titans on Attack",
@@ -206,7 +206,7 @@ var cardData = [{
 	"subtype":"Move",
 	"cost":4,
 	"hitpoints":null,
-	"text":"Move 2Draw a card.\nDefense: You may discard this card to avoid an Ambush. If you do, draw two cards.",
+	"text":"Move 2\nDraw a card.\nDefense: You may discard this card to avoid an Ambush. If you do, draw two cards.",
 	"name":"Escape"
 }, {
 	"type":"Titan",
@@ -276,7 +276,7 @@ var cardData = [{
 	"subtype":"Move",
 	"cost":2,
 	"hitpoints":null,
-	"text":"Move 3+1 Power",
+	"text":"Move 3\n+1 Power",
 	"name":"Horse"
 }, {
 	"type":"Location",
@@ -339,7 +339,7 @@ var cardData = [{
 	"subtype":"Move",
 	"cost":2,
 	"hitpoints":null,
-	"text":"Move 1The player to your right looks at the top four cards of the main deck, and places them back on top in any order.",
+	"text":"Move 1\nThe player to your right looks at the top four cards of the main deck, and places them back on top in any order.",
 	"name":"Long-Distance Scouting Formation"
 }, {
 	"type":"Ally",
@@ -402,7 +402,7 @@ var cardData = [{
 	"subtype":"Move",
 	"cost":2,
 	"hitpoints":null,
-	"text":"Move 1Choose a Hero in this District to draw a card and discard a card.",
+	"text":"Move 1\nChoose a Hero in this District to draw a card and discard a card.",
 	"name":"Reel In"
 }, {
 	"type":"Ally",
@@ -479,14 +479,14 @@ var cardData = [{
 	"subtype":"Move",
 	"cost":5,
 	"hitpoints":null,
-	"text":"Move 1+4 Power if you play or have played one or more Equipment this turn.\nOtherwise, +2 Power.",
+	"text":"Move 1\n+4 Power if you play or have played one or more Equipment this turn.\nOtherwise, +2 Power.",
 	"name":"Surprise Attack"
 }, {
 	"type":"Maneuver",
 	"subtype":"Move",
 	"cost":3,
 	"hitpoints":null,
-	"text":"Move 2Defense: You may discard this card to avoid an Ambush. If you avoided an Archenemy Titan, draw a card. Otherwise, defeat that Titan.",
+	"text":"Move 2\nDefense: You may discard this card to avoid an Ambush. If you avoided an Archenemy Titan, draw a card. Otherwise, defeat that Titan.",
 	"name":"Swing Away"
 }, {
 	"type":"Equipment",
