@@ -85,6 +85,37 @@
 			align-items: flex-start;
 			flex-wrap: wrap;
 		}
+
+		.districts {
+			list-style: none;
+			white-space: nowrap;
+			margin: 10px 0 0;
+			padding: 10px 0 0;
+			border-top: 3px double rgba(0,0,0,.2);
+		}
+		.districts > li {
+			display: inline-flex;
+			flex-direction: column;
+		}
+		.districts > li > h3 {
+			margin: 0 0 10px;
+			order: 0;
+		}
+		.districts [id$="-outer-heroes"] {
+			order: -2;
+		}
+		.districts [id$="-outer-wall"] {
+			order: -1;
+		}
+		.districts [id$="-inner-wall"] {
+			order: 1;
+		}
+		.districts [id$="-inner-heroes"] {
+			order: 2;
+		}
+		.districts .cardpile h3 {
+			display: none;
+		}
 	</style>
 	<title></title>
 </head>
@@ -95,11 +126,15 @@
 	<div class="set">
 		<button name="generateLink">Generate Link</button><input type="text" readonly name="url"/>
 	</div>
+	<ol class="districts"></ol>
 	<ol class="players"></ol>
 	<ul class="misc"></ul>
 	<script src="seedrandom.min.js"></script>
 	<script src="Base64.js"></script>
 	<script src="LZString.js"></script>
+	<script src="helper.js"></script>
+	<script src="actionBox.js"></script>
+	<script src="defaultCfg.js"></script>
 	<script src="main.js"></script>
 </body>
 </html>
