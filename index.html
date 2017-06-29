@@ -98,20 +98,44 @@
 			flex-direction: column;
 		}
 		.districts > li > h3 {
-			margin: 0 0 10px;
+			margin: 0;
+			border-bottom: 0;
+			border-top: 0;
 			order: 0;
+		}
+		.districts h3,
+		.districts [id$="-wall"] {
+			border: 1px solid rgba(0,0,0,.2);
+			padding: 5px;
+		}
+		.districts [id$="-heroes"] {
+			padding: 5px;
+		}
+		.districts [id$="-wall"] li::after {
+			content: " (" attr(data-cost) ")";
 		}
 		.districts [id$="-outer-heroes"] {
 			order: -2;
 		}
 		.districts [id$="-outer-wall"] {
 			order: -1;
+			border-bottom: 0;
 		}
 		.districts [id$="-inner-wall"] {
 			order: 1;
+			border-top: 0;
 		}
 		.districts [id$="-inner-heroes"] {
 			order: 2;
+		}
+		.districts [id$="-outer-heroes"] li + li::before,
+		.districts [id$="-inner-heroes"] li + li::before {
+			content: ", ";
+		}
+		.districts [id$="-outer-heroes"] li,
+		.districts [id$="-inner-heroes"] li {
+			font-weight: bold;
+			display: inline;
 		}
 		.districts .cardpile h3 {
 			display: none;
@@ -135,6 +159,7 @@
 	<script src="helper.js"></script>
 	<script src="actionBox.js"></script>
 	<script src="defaultCfg.js"></script>
+	<script src="cardData.js"></script>
 	<script src="main.js"></script>
 </body>
 </html>

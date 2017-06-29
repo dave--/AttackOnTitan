@@ -14,6 +14,7 @@ var createPile = function (id, name, cards) {
 	cards.forEach(function (item) {
 		var listitem = document.createElement('li');
 		listitem.innerHTML = item;
+		listitem.setAttribute('data-cost', cardData.filter(function (card) {if (card.name === item) return true; return false;})[0].cost);
 		list.appendChild(listitem);
 	});
 
