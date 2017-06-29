@@ -38,7 +38,7 @@
 		}
 
 		.cardpile {
-			min-width: 150px;
+			width: 150px;
 		}
 		.cardpile > h3 {
 			margin: 0 0 10px;
@@ -49,9 +49,33 @@
 			list-style: none;
 			cursor: pointer;
 		}
+		.cardpile > ul > li {
+			
+		}
+		.cardpile > ul > li.clicked::before {
+			content: "TYPE: " attr(data-type) "\A" attr(data-text);
+			border: 1px solid black;
+			position: fixed;
+			top: 0;
+			right: 0;
+			max-width: 100%;
+			background: #ddd;
+			white-space: pre-wrap;
+		}
+		.cardpile > ul > li.clicked[data-subtype]::before {
+			content: "TYPE: " attr(data-type) " - SUBTYPE: " attr(data-subtype) "\A" attr(data-text);
+		}
+		.cardpile > ul > li.clicked[data-hitpoints]::before {
+			content: "TYPE: " attr(data-type) " - HP: " attr(data-hitpoints) "\A" attr(data-text);
+
+		}
+		.cardpile > ul > li.clicked[data-hitpoints][data-subtype]::before {
+			content: "TYPE: " attr(data-type) " - SUBTYPE: " attr(data-subtype) " - HP: " attr(data-hitpoints) "\A" attr(data-text);
+		}
 
 		.clicked {
 			background: orange;
+			z-index: 10;
 		}
 
 		.actionBox {
@@ -96,6 +120,7 @@
 		.districts > li {
 			display: inline-flex;
 			flex-direction: column;
+			white-space: normal;
 		}
 		.districts > li > h3 {
 			margin: 0;

@@ -14,7 +14,16 @@ var createPile = function (id, name, cards) {
 	cards.forEach(function (item) {
 		var listitem = document.createElement('li');
 		listitem.innerHTML = item;
-		listitem.setAttribute('data-cost', cardData.filter(function (card) {if (card.name === item) return true; return false;})[0].cost);
+		var card = cardData.filter(function (card) {if (card.name === item) return true; return false;})[0];
+		listitem.setAttribute('data-cost', card.cost);
+		listitem.setAttribute('data-type', card.type);
+		listitem.setAttribute('data-text', card.text);
+		if (card.subtype) {
+			listitem.setAttribute('data-subtype', card.subtype);
+		}
+		if (card.hitpoints) {
+			listitem.setAttribute('data-hitpoints', card.hitpoints);
+		}
 		list.appendChild(listitem);
 	});
 

@@ -59,7 +59,7 @@ var cardData = [{
 	"subtype":"Move",
 	"cost":2,
 	"hitpoints":null,
-	"text":"+1 PowerYou may put this card back on the 3D Gear stack. If you do, Move 2 and an additional +1 Power.",
+	"text":"+1 Power\nYou may put this card back on the 3D Gear stack. If you do, Move 2 and an additional +1 Power.",
 	"name":"3D Gear"
 }, {
 	"type":"Titan",
@@ -108,7 +108,7 @@ var cardData = [{
 	"subtype":null,
 	"cost":6,
 	"hitpoints":null,
-	"text":"+3 PowerDeal 5 damage to each Archenemy Titan in this District.",
+	"text":"+3 Power\nDeal 5 damage to each Archenemy Titan in this District.",
 	"name":"Cannon"
 }, {
 	"type":"Titans on Attack",
@@ -136,7 +136,7 @@ var cardData = [{
 	"subtype":null,
 	"cost":5,
 	"hitpoints":null,
-	"text":"+2 PowerDefense: You may discard this card to avoid an Ambush. If you do, draw two cards and you may destroy a card in your hand.",
+	"text":"+2 Power\nDefense: You may discard this card to avoid an Ambush. If you do, draw two cards and you may destroy a card in your hand.",
 	"name":"Cloak"
 }, {
 	"type":"Titan",
@@ -199,7 +199,7 @@ var cardData = [{
 	"subtype":null,
 	"cost":5,
 	"hitpoints":null,
-	"text":"+2 PowerDeal 3 damage to an Archenemy Titan in your space. If there aren't any in your space, draw a card.",
+	"text":"+2 Power\nDeal 3 damage to an Archenemy Titan in your space. If there aren't any in your space, draw a card.",
 	"name":"Eld"
 }, {
 	"type":"Maneuver",
@@ -255,14 +255,14 @@ var cardData = [{
 	"subtype":null,
 	"cost":3,
 	"hitpoints":null,
-	"text":"+1 PowerDeal 4 damage to an Archenemy Titan in your space.",
+	"text":"+1 Power\nDeal 4 damage to an Archenemy Titan in your space.",
 	"name":"Gunther Schultz"
 }, {
 	"type":"Ally",
 	"subtype":null,
 	"cost":3,
 	"hitpoints":null,
-	"text":"+1 PowerDefense: You may discard this card to have each Hero in this District avoid an Ambush. If you do, draw a card.",
+	"text":"+1 Power\nDefense: You may discard this card to have each Hero in this District avoid an Ambush. If you do, draw a card.",
 	"name":"Hannes"
 }, {
 	"type":"Maneuver",
@@ -353,7 +353,7 @@ var cardData = [{
 	"subtype":null,
 	"cost":4,
 	"hitpoints":null,
-	"text":"+2 PowerFor each titan you defeat this turn, draw an additional card at the end of your turn.",
+	"text":"+2 Power\nFor each titan you defeat this turn, draw an additional card at the end of your turn.",
 	"name":"Miche Zacharius"
 }, {
 	"type":"Ally",
@@ -367,7 +367,7 @@ var cardData = [{
 	"subtype":null,
 	"cost":3,
 	"hitpoints":null,
-	"text":"+2 PowerYou may discard a Move card. If you do, draw a card.",
+	"text":"+2 Power\nYou may discard a Move card. If you do, draw a card.",
 	"name":"Ness"
 }, {
 	"type":"Location",
@@ -381,14 +381,14 @@ var cardData = [{
 	"subtype":null,
 	"cost":5,
 	"hitpoints":null,
-	"text":"+2 PowerEach time you defeat a Titan this turn, you may destroy a card in your hand or discard pile.",
+	"text":"+2 Power\nEach time you defeat a Titan this turn, you may destroy a card in your hand or discard pile.",
 	"name":"Oruo Bozad"
 }, {
 	"type":"Maneuver",
 	"subtype":"Move",
 	"cost":6,
 	"hitpoints":null,
-	"text":"+3 PowerChoose a Hero in this District. Destroy a Courage in their discard pile.",
+	"text":"+3 Power\nChoose a Hero in this District. Destroy a Courage in their discard pile.",
 	"name":"Pay Tribute"
 }, {
 	"type":"Ally",
@@ -409,7 +409,7 @@ var cardData = [{
 	"subtype":null,
 	"cost":6,
 	"hitpoints":null,
-	"text":"+2 PowerDefense: You may reveal this card from your hand to avoid an Ambush. If you do, draw a card.",
+	"text":"+2 Power\nDefense: You may reveal this card from your hand to avoid an Ambush. If you do, draw a card.",
 	"name":"Reiner Braun"
 }, {
 	"type":"Titans on Attack",
