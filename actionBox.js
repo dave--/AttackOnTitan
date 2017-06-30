@@ -7,14 +7,68 @@ var actionBox = (function () {
 
 	box.addEventListener('click', function (e) {
 		if (e.target.name === 'action') {
-			$('button', box).forEach(function (el) {
-				addClass(el, 'nope');
-			});
-			removeClass(e.target, 'nope');
-			removeClass($('.secondLevel', box)[0], 'hidden');
-			$('.thirdLevel', box).forEach(function (el) {
-				addClass(el, 'hidden');
-			})
+			if (e.target.value === 'drawCastle') {
+				var cardCnt = $('[data-type="Equipment"]:not([data-name="3D Gear"]), [data-type="Maneuver"], [data-type="Ally"], [data-type="Location"], [data-type="Titan"]:not([data-subtype^="Archenemy "]').length,
+					stackCnt = 6,
+					stacksize = cardCnt / stackCnt,
+					maxArchenemies = 4,
+					archenemyCnt = $('[data-type="Titan"][data-subtype^="Archenemy "]').length,
+					archenemiesNotInPlay = $('#misc-archenemies li'),
+					archenemyInPlayCnt = archenemyCnt - archenemiesNotInPlay.length,
+					cardsInCastle = $('#misc-castle li'),
+					currentStack = Math.ceil(cardsInCastle.length / stacksize),
+					cardsLeftInStack = stacksize - (cardCnt - (stackCnt - currentStack) * stacksize - cardsInCastle.length);
+				
+				var card, target, walls = $('.districts > li'), targetWall = walls[0];
+				
+				// get wall with least amount of cards, furthest left
+				for (var i = 1; i < walls.length; i++) {
+					if ($('[id$="-inner-wall"] li', walls[i]).length < $('[id$="-inner-wall"] li', targetWall).length) {
+						targetWall = walls[i];
+					}
+				}
+
+				if (
+					// archenemy potentially arrives
+					archenemyInPlayCnt < stackCnt - currentStack
+					// archenemy max not reached
+					&& archenemyInPlayCnt < maxArchenemies
+					// chance for archenemy
+					&& RNG(collectData()) * (cardsLeftInStack + (stackCnt - currentStack)) > cardsLeftInStack
+					) {
+					var availableTitans = [].filter.call($('#misc-archenemies li'), function (el) { 
+						return (el.getAttribute('data-subtype').substr(el.getAttribute('data-subtype').length - 2) === ' ' + (stackCnt - currentStack));
+					});
+					// draw random archenemy
+					card = availableTitans[Math.floor(RNG() * availableTitans.length)];
+					// target will be outer district
+					target = $('[id$="-outer-wall"] ul', targetWall)[0];
+				} else {
+					// draw random card from castle
+					card = cardsInCastle[Math.floor(RNG(collectData()) * cardsInCastle.length)];
+					// target will be inner district
+					target = $('[id$="-inner-wall"] ul', targetWall)[0];
+				}
+
+				card.parentNode.removeChild(card);
+				target.appendChild(card);
+				sortList($('li', target));
+
+				
+				actionBox.hide();
+				$('.clicked').forEach(function (el) {
+					removeClass(el, 'clicked');
+				});
+			} else {
+				$('button', box).forEach(function (el) {
+					addClass(el, 'nope');
+				});
+				removeClass(e.target, 'nope');
+				removeClass($('.secondLevel', box)[0], 'hidden');
+				$('.thirdLevel', box).forEach(function (el) {
+					addClass(el, 'hidden');
+				})
+			}
 		} else if (e.target.name === 'targetGroup') {
 			$('.secondLevel button').forEach(function (el) {
 				addClass(el, 'nope');
@@ -93,6 +147,9 @@ var actionBox = (function () {
 				// Headline was clicked, offer option to "move all …" or "move random …"
 				firstLevelHtml += '<button name="action" value="moveAll" class="nope">Move All to …</button>';
 				firstLevelHtml += '<button name="action" value="moveRandom" class="nope">Move 1 random to …</button>';
+				if (findParent(el, '.cardpile').id === 'misc-castle') {
+					firstLevelHtml += '<button name="action" value="drawCastle" class="nope">Draw 1 random to add to wall.</button>';
+				}
 				source = $('li', findParent(el, '.cardpile'));
 			} else {
 				// specific card was clicked, off option to "move"

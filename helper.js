@@ -15,6 +15,7 @@ var createPile = function (id, name, cards) {
 		var listitem = document.createElement('li');
 		listitem.innerHTML = item;
 		var card = cardData.filter(function (card) {if (card.name === item) return true; return false;})[0];
+		listitem.setAttribute('data-name', card.name)
 		listitem.setAttribute('data-cost', card.cost);
 		listitem.setAttribute('data-type', card.type);
 		listitem.setAttribute('data-text', card.text);

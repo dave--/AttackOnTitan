@@ -60,6 +60,7 @@ var applyData = function (cfg) {
 	miscContainer.appendChild(createPile('misc-wounds', 'Wounds', cfg.misc.wounds));
 	miscContainer.appendChild(createPile('misc-gears', '3D Gears', cfg.misc.gears));
 	miscContainer.appendChild(createPile('misc-castle', 'Castle', cfg.misc.castle));
+	miscContainer.appendChild(createPile('misc-archenemies', 'Archenemy Titans', cfg.misc.archenemies));
 	miscContainer.appendChild(createPile('misc-titansonattack', 'Titans on Attack', cfg.misc.titansonattack));
 	miscContainer.appendChild(createPile('misc-destroyed', 'Destroyed Cards', cfg.misc.destroyed));
 	miscContainer.appendChild(createPile('misc-heroes', 'Heroes', cfg.misc.heroes));
@@ -99,6 +100,7 @@ var collectData = function () {
 	cfg.misc.wounds = [].map.call($('.cardpile#misc-wounds > ul > li'), function (item) {return item.innerText});
 	cfg.misc.gears = [].map.call($('.cardpile#misc-gears > ul > li'), function (item) {return item.innerText});
 	cfg.misc.castle = [].map.call($('.cardpile#misc-castle > ul > li'), function (item) {return item.innerText});
+	cfg.misc.archenemies = [].map.call($('.cardpile#misc-archenemies > ul > li'), function (item) {return item.innerText});
 	cfg.misc.titansonattack = [].map.call($('.cardpile#misc-titansonattack > ul > li'), function (item) {return item.innerText});
 	cfg.misc.destroyed = [].map.call($('.cardpile#misc-destroyed > ul > li'), function (item) {return item.innerText});
 	cfg.misc.heroes = [].map.call($('.cardpile#misc-heroes > ul > li'), function (item) {return item.innerText});
