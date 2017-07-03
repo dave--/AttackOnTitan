@@ -29,12 +29,10 @@ var actionBox = (function () {
 				}
 
 				if (
-					// archenemy potentially arrives
-					archenemyInPlayCnt < stackCnt - currentStack
-					// archenemy max not reached
-					&& archenemyInPlayCnt < maxArchenemies
 					// chance for archenemy
-					&& RNG(collectData()) * (cardsLeftInStack + (stackCnt - currentStack)) > cardsLeftInStack
+					RNG(collectData()) * (cardsLeftInStack + (stackCnt - currentStack + archenemyInPlayCnt)) > cardsLeftInStack
+					// archenemy potentially arrives
+					&& archenemyInPlayCnt < stackCnt - currentStack
 					) {
 					var availableTitans = [].filter.call($('#misc-archenemies li'), function (el) { 
 						return (el.getAttribute('data-subtype').substr(el.getAttribute('data-subtype').length - 2) === ' ' + (stackCnt - currentStack));
@@ -43,7 +41,7 @@ var actionBox = (function () {
 					card = availableTitans[Math.floor(RNG() * availableTitans.length)];
 				} else {
 					// draw random card from castle
-					card = cardsInCastle[Math.floor(RNG(collectData()) * cardsInCastle.length)];
+					card = cardsInCastle[Math.floor(RNG() * cardsInCastle.length)];
 				}
 				// titan goes to outer wall, other cards to inner wall
 				if (card.getAttribute('data-type') === 'Titan') {
