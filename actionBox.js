@@ -41,11 +41,15 @@ var actionBox = (function () {
 					});
 					// draw random archenemy
 					card = availableTitans[Math.floor(RNG() * availableTitans.length)];
-					// target will be outer district
-					target = $('[id$="-outer-wall"] ul', targetWall)[0];
 				} else {
 					// draw random card from castle
 					card = cardsInCastle[Math.floor(RNG(collectData()) * cardsInCastle.length)];
+				}
+				// titan goes to outer wall, other cards to inner wall
+				if (card.getAttribute('data-type') === 'Titan') {
+					// target will be outer district
+					target = $('[id$="-outer-wall"] ul', targetWall)[0];
+				} else {
 					// target will be inner district
 					target = $('[id$="-inner-wall"] ul', targetWall)[0];
 				}
