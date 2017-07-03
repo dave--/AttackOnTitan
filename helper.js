@@ -73,7 +73,7 @@ var findParent = function (el, selector) {
 var createTinyurl = function (href) {
 	var characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789',
 		str = '',
-		charCnt = 20,
+		charCnt = 16,
 		uri;
 
 	for (var i = 0; i < charCnt; i += 1) {
