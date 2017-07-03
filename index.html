@@ -52,7 +52,7 @@
 		.cardpile > ul > li {
 			
 		}
-		.cardpile > ul > li.clicked::before {
+		.cardpile > ul > li.clicked::after {
 			content: "TYPE: " attr(data-type) "\A" attr(data-text);
 			border: 1px solid black;
 			position: fixed;
@@ -63,14 +63,14 @@
 			white-space: pre-wrap;
 			font-weight: normal;
 		}
-		.cardpile > ul > li.clicked[data-subtype]::before {
+		.cardpile > ul > li.clicked[data-subtype]::after {
 			content: "TYPE: " attr(data-type) " - SUBTYPE: " attr(data-subtype) "\A" attr(data-text);
 		}
-		.cardpile > ul > li.clicked[data-hitpoints]::before {
+		.cardpile > ul > li.clicked[data-hitpoints]::after {
 			content: "TYPE: " attr(data-type) " - HP: " attr(data-hitpoints) "\A" attr(data-text);
 
 		}
-		.cardpile > ul > li.clicked[data-hitpoints][data-subtype]::before {
+		.cardpile > ul > li.clicked[data-hitpoints][data-subtype]::after {
 			content: "TYPE: " attr(data-type) " - SUBTYPE: " attr(data-subtype) " - HP: " attr(data-hitpoints) "\A" attr(data-text);
 		}
 
