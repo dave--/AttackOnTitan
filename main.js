@@ -108,7 +108,7 @@ var collectData = function () {
 	$('.districts > li').forEach(function (el) {
 		cfg.districts.push({
 			name: $('h3', el)[0].innerText,
-			hitpoints: 2,
+			hitpoints: el.getAttribute('data-hp'),
 			locations: [],
 			outer: {
 				cards: [].map.call($('.cardpile[id$="-outer-wall"] > ul > li', el), function (item) {return item.innerText}),
