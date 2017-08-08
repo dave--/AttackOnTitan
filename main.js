@@ -68,6 +68,7 @@ var applyData = function (cfg) {
 	var districtContainer = $('.districts')[0];
 	for (var i = 0; i < cfg.districts.length; i++) {
 		var districtEl = document.createElement('li');
+		districtEl.setAttribute('data-hp', cfg.districts[i].hitpoints);
 
 		var nameEl = document.createElement('h3');
 		nameEl.innerHTML = cfg.districts[i].name;

@@ -19,7 +19,7 @@ var actionBox = (function () {
 					currentStack = Math.ceil(cardsInCastle.length / stacksize),
 					cardsLeftInStack = stacksize - (cardCnt - (stackCnt - currentStack) * stacksize - cardsInCastle.length);
 				
-				var card, target, walls = $('.districts > li'), targetWall = walls[0];
+				var card, target, walls = $('.districts > li:not([data-hp="0"])'), targetWall = walls[0];
 				
 				// get wall with least amount of cards, furthest left
 				for (var i = 1; i < walls.length; i++) {
